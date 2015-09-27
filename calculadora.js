@@ -2,6 +2,10 @@
 // windows.onload permite la carga de propiedades de la pagina despues de renderizacion
 window.onload = function(){
 	display = document.getElementById('display');		//	It will edit the <input id="display"> properties
+	suma = document.getElementById('suma');				//	It wlll edit the <input type="button" id="suma"> properties
+	resta = document.getElementById('resta');			//	It wlll edit the <input type="button" id="resta"> properties
+	producto = document.getElementById('producto');		//	It wlll edit the <input type="button" id="producto"> properties
+	cociente = document.getElementById('cociente');		//	It wlll edit the <input type="button" id="cociente"> properties
 }
 
 x = "0";	//	Variable that saves the number in the textarea
@@ -37,12 +41,47 @@ function numero(num){
 	xi = 0;								//	the number is started and we can extend
 }
 
-// Function that will catch the operator as parameter and will make the corresponded operation
+//	Function that will catch the operator as parameter and will make the corresponded operation
 function operar(sign){
 	resultado();						//	the current operations will be made in first time
 	ni = x;								//	save the first wrote number
 	op = sign;							//	save the operator
 	xi = 1;								//	initialize screen
+	
+	//	It will evaluate which of those buttons will change of background color depending the operation what I want to do
+	switch(sign){
+		//	If the '+' button is pressed, it will turn the background color to blue. The rest as equal as before
+		case '+':
+			suma.style.backgroundColor = '#0000FF';
+			resta.style.backgroundColor = '#000000';
+			producto.style.backgroundColor = '#000000';
+			cociente.style.backgroundColor = '#000000';
+		break;
+		
+		//	If the '-' button is pressed, it will turn the background color to blue. The rest as equal as before
+		case '-':
+			suma.style.backgroundColor = '#000000';
+			resta.style.backgroundColor = '#0000FF';
+			producto.style.backgroundColor = '#000000';
+			cociente.style.backgroundColor = '#000000';
+		break;
+		
+		//	If the '*' button is pressed, it will turn the background color to blue. The rest as equal as before
+		case '*':
+			suma.style.backgroundColor = '#000000';
+			resta.style.backgroundColor = '#000000';
+			producto.style.backgroundColor = '#0000FF';
+			cociente.style.backgroundColor = '#000000';
+		break;
+
+		//	If the '/' button is pressed, it will turn the background color to blue. The rest as equal as before
+		case '/':
+			suma.style.backgroundColor = '#000000';
+			resta.style.backgroundColor = '#000000';
+			producto.style.backgroundColor = '#000000';
+			cociente.style.backgroundColor = '#0000FF';
+		break;
+	}
 }
 
 // Function that will solve the operation and will show its result in the screen
@@ -59,6 +98,12 @@ function resultado(){
 		op = "no";						//	there isn't any other operation to do
 		xi = 1;							//	the screen can be restarted
 	}
+
+	//	All operation buttons will turn to initial background color	
+	suma.style.backgroundColor = '#000000';
+	resta.style.backgroundColor = '#000000';
+	producto.style.backgroundColor = '#000000';
+	cociente.style.backgroundColor = '#000000';
 }
 
 //	Function that will delete the last written number
@@ -84,4 +129,10 @@ function limpiar(){
 	ni = 0;								//	the hidden number or the first saved number is deleted
 	op = "no";							//	the current operation is deleted
 	display.value = x;					//	the 0 value is displayed in the screen
+	
+	//	All operation buttons will turn to initial background color
+	suma.style.backgroundColor = '#000000';
+	resta.style.backgroundColor = '#000000';
+	producto.style.backgroundColor = '#000000';
+	cociente.style.backgroundColor = '#000000';
 }
