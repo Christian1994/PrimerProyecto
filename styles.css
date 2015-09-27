@@ -2,47 +2,32 @@
 	box-sizing: border-box;
 }
 
-[class*="col-"]{
-	width: 100%;
-}
-
-/* Media query Mobile modo Portrait*/
-@media screen and (min-device-width: 768px) and (max-device-width: 1024px){
-	/* Propiedades para las columnas */
-	.col-1 {width: 8.33%;}
-	.col-2 {width: 16.66%;}
-	.col-3 {width: 25%;}
-	.col-4 {width: 33.33%;}
-	.col-5 {width: 41.66%;}
-	.col-6 {width: 50%;}
-	.col-7 {width: 58.33%;}
-	.col-8 {width: 66.66%;}
-	.col-9 {width: 75%;}
-	.col-10 {width: 83.33%;}
-	.col-11 {width: 91.66%;}
-	.col-12 {width: 100%;}
-}
-
 body{
 	background-color: #2E2E2E;
 	margin: 0;
 }
 
-input[type="button"]{
-	width: 100px;
-	height: 100px;
+.teclas input[type="button"]{
+	width: 15%;
+	height: 15%;
 	font-family: Calibri;
 	font-size: 72px;
 	font-weight: bold;
 	background-color: #000000;
 	color: #FFFFFF;
-	margin: 16px;
+	margin: 3%;
 	border: 0;
 }
 
-input[value="0"]{
-	width: 100px;
-	height: 234px;
+.operaciones input[type="button"]{
+	width: 32%;
+	font-family: Calibri;
+	font-size: 72px;
+	font-weight: bold;
+	background-color: #000000;
+	color: #FFFFFF;
+	margin: 6%;
+	border: 0;
 }
 
 .header{
@@ -68,11 +53,10 @@ input[id="display"]{
 	width: 75%;
 	height: 100px;
 	text-align: right;
-	font-size: 80px;
+	font-size: 90px;
 	font-family: Calibri;
 	font-weight: bold;
 	overflow: hidden;
-	margin-bottom: -30px;
 	border: 0;
 }
 
@@ -99,15 +83,8 @@ input[type="button"]:active{
 	border: 1px solid black;
 }
 
-/* CSS style to indicate the button was pressed. Note: This efect won't be displayed in Mozilla Browser */
-
-input[value="/"]:visited, input[value="x"]:visited, input[value="-"]:visited, input[value="+"]:visited{
-	background-color: #0000FF;
-	border: 1px solid white;
-}
-
 .teclas{
-	width: 75%;
+	width: 50%;
 	height: auto;
 	padding: 2%;
 	float: left;
@@ -117,5 +94,50 @@ input[value="/"]:visited, input[value="x"]:visited, input[value="-"]:visited, in
 	width: 25%;
 	height: auto;
 	padding: 2%;
-	float: left;
+	float: right;
+}
+
+/* Media query mobile modo Portrait */
+@media screen and (max-width: 768px){
+	.header > input[type="button"]{
+		width: 11vw;
+		height: 11vh;
+		font-size: 50px;
+	}
+
+	input[id="display"]{
+		width: 70%;
+		height: 10vh;
+		font-size: 50px;
+	}
+
+	.teclas input[type="button"]{
+		width: 12vw;
+		height: 13vh;
+		margin: 2%;
+		font-size: 50px;
+	}
+	
+	.operaciones input[type="button"]{
+		width: 12vw;
+		height: 13vh;
+		margin: 4%;
+		font-size: 50px;
+	}
+	
+	.header{
+		background-color: #FBF5EF;
+		width: 100vw;
+		height: 30vh;
+	}
+
+	.teclas{
+		width: 65%;
+		height: 33.33vh;
+	}
+
+	.operaciones{
+		width: 35%;
+		height: 33.33vh;
+	}
 }
